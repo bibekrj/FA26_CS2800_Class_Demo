@@ -1,0 +1,4 @@
+HTML Boilerplate -sidthesloth
+HTML CSS Support - ecmet
+Live Server - Ritwick Dey
+Prettier - Prettier
