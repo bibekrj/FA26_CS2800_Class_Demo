@@ -6,6 +6,11 @@
     <title>Document</title>
   </head>
   <body>
+     <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#">Form</a></li>
+    </ul>
     <form action="" method="get">
       <table>
         <tr>
@@ -18,12 +23,35 @@
           <td><input type="text" name="last_name" id="" /></td>
         </tr>
         <tr>
+          <td><label for="password">Password</label></td>
+          <td><input type="password" name="password" id=""></td>
+        </tr>
+        <tr>
           <td><label for="user_email">Email</label></td>
           <td><input type="email" name="user_email" id="" /></td>
         </tr>
         <tr>
           <td><label for="salary">Salary Expectations</label></td>
           <td><input type="number" name="salary" id="" /></td>
+        </tr>
+        <tr>
+          <td><label for="language">Choose your Favorite Language</label></td>
+          <td>
+            <input type="radio" name="prog_language" id="" value="Python" checked><label for="">Python</label>
+            <input type="radio" name="prog_language" id="" value="JavaScript"><label for="">JavaScript</label>
+            <input type="radio" name="prog_language" id="" value="Java"> <label for="">Java</label>
+            <input type="radio" name="prog_language" id="" value="C"><label for="">C</label>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="Experience">Tell me your experience level</label></td>
+          <td>
+            <select name="Experience" id="">
+              <option value="less_than_1_year">Less than 1 year</option>
+              <option value="1_2_years" selected>1 to 2 years</option>
+              <option value="3_or_more_years">3 or more years</option>
+            </select>
+          </td>
         </tr>
         <tr>
           <td>
