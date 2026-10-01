@@ -13,8 +13,51 @@ p {
     color: blue;
 }
 
-h1, h2, h3, h4,h5, h6{
+h1,{
    font-size: 30px;
     /* color: red; */
 }
 
+h3{
+    font-size: 15px;
+}
+
+.navbar{
+    background-color: #DAF9DE;
+    padding: 20px;
+}
+
+.navbar ul{
+    list-style-type: none;
+    margin: 0;
+}
+
+.navbar ul li{
+    display: inline-block;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    padding: 20px;
+    background-color: #F6FFDC;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.navbar ul li a:visited{
+    color: black;
+}
+
+.navbar ul li a:hover{
+    color:red;
+}
+
+
+#formButton{
+    background-color: rgb(249, 178, 215);
+}
+
+#submitBtn{
+    background-color: rgb(249, 178, 215);
+    padding: 20px;
+}
