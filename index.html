@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
@@ -9,19 +9,18 @@
   <body>
     <header>
       <h1>The Wright State CS2800 Library</h1>
-      <h3>The best source for all your HTML needs</h3>
+      <h2>The best source for all your HTML needs</h3>
     </header>
     <nav class="navbar">
       <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="#" class="active">Home</a></li>
         <li><a href="pages/contact.html">Contact</a></li>
-        <li><a href="pages/form.html" id="formButton">Form</a></li>
+        <li><a href="pages/form.html">Form</a></li>
       </ul>
     </nav>
     <section>
-
-      <h3>Bibek said this is awesome</h3>
-      <h6>Does it have to be different?</h6>
+      <h1>Artcile Title is awesome</h2>
+      <h2>Bibek said this is awesome</h3>
       <p style="font-size: 20px; color: blue">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora et enim
         sapiente totam omnis veritatis dicta vero voluptatum doloribus amet
@@ -37,6 +36,7 @@
           padding: 100px 0px 100px 10px;
           margin: 50px;
           border: 20px solid #ff99c8;
+          text-align: right;
         "
       >
         Lorem ipsum dolor sit amet <strong> consectetur </strong> adipisicing
@@ -58,16 +58,16 @@
         vero. Ad!
       </p>
 
-      <h1>This is heading 1</h1>
+      <!-- <h1>This is heading 1</h1>
       <h2>This is heading 2</h2>
       <h3>This is heading 3</h3>
       <h4>This is heading 4</h4>
       <h5>This is heading 5</h5>
-      <h6>This is heading 6</h6>
+      <h6>This is heading 6</h6> -->
       <a href="pages/contact.html">Here's my Contact detail</a>
 
       <figure>
-        <img src="images/image2.jpg" alt="Image of a forest in Fall season" />
+        <img src="images/image2.jpg" alt="Image of a forest in Fall season">
         <figcaption>
           Circe 2026 Web Development Class Sample 1, Dayton, Ohio
         </figcaption>
@@ -114,7 +114,7 @@
         </dd>
       </dl>
 
-      <table border="1">
+      <table class="demoTable">
         <tr>
           <td>Number</td>
           <td>First Name</td>
@@ -124,8 +124,8 @@
         </tr>
         <tr>
           <td colspan="4"></td>
-          <td>Home</td>
-          <td>Office</td>
+          <td class="tdCenter">Home</td>
+          <td class="tdCenter">Office</td>
         </tr>
         <tr>
           <td>1</td>
@@ -161,7 +161,7 @@
         </tr>
       </table>
 
-      <table border="1">
+      <table style="border: 1px solid black; margin: 10px;">
         <tr>
           <th>Name</th>
           <th>Age</th>
@@ -170,9 +170,13 @@
           <td>Bob</td>
           <td>80</td>
         </tr>
+        <tr>
+          <td>Bob</td>
+          <td>80</td>
+        </tr>
       </table>
 
-      <table border="1">
+      <table style="border: 1px solid black;">
         <thead>
           <tr>
             <th>Name</th>

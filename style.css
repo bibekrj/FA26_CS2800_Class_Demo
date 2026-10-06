@@ -1,63 +1,87 @@
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
-    color: rgb(17, 126, 2);
-    background-color: #fcf6bd;
+    color: rgb(27, 28, 27);
+    background-color: #f4f6f8;
 }
 
-p{
+p {
     font-size: 20px;
 }
 
 p {
-  
+
     color: blue;
 }
 
-h1,{
-   font-size: 30px;
-    /* color: red; */
+h1
+{
+font-size: 30px;
+/* color: red; */
 }
 
-h3{
+h3 {
     font-size: 15px;
 }
 
-.navbar{
-    background-color: #DAF9DE;
+.navbar {
+    background-color: #333;
     padding: 20px;
 }
 
-.navbar ul{
+.navbar ul {
     list-style-type: none;
     margin: 0;
 }
 
-.navbar ul li{
+.navbar ul li {
     display: inline-block;
+
+
 }
 
-.navbar ul li a{
+.navbar ul li a {
     text-decoration: none;
     padding: 20px;
-    background-color: #F6FFDC;
-    border: 1px solid black;
-    margin: 10px;
+    /* background-color: #F6FFDC; */
+    /* border: 1px solid black; */
+    
+    color: white;
 }
 
-.navbar ul li a:visited{
-    color: black;
+.navbar ul li a:visited {
+    /* color: ; */
 }
 
-.navbar ul li a:hover{
-    color:red;
+.navbar ul li a:hover {
+    background-color: #000;
 }
 
 
-#formButton{
+#formButton {
     background-color: rgb(249, 178, 215);
 }
 
-#submitBtn{
-    background-color: rgb(249, 178, 215);
+#submitBtn {
+    /* background-color: rgb(249, 178, 215); */
     padding: 20px;
+}
+
+.demoTable td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.demoTable {
+    border-collapse: collapse;
+}
+
+
+
+.tdCenter {
+    text-align: center;
+    background-color: white;
+}
+
+.active {
+    background-color: #117e02;
 }
