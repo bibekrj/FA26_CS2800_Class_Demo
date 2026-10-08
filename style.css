@@ -2,6 +2,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(27, 28, 27);
     background-color: #f4f6f8;
+    margin: 0;
+    /* padding 0 */
+    /* width: 100%; */
 }
 
 p {
@@ -13,10 +16,9 @@ p {
     color: blue;
 }
 
-h1
-{
-font-size: 30px;
-/* color: red; */
+h1 {
+    font-size: 30px;
+    /* color: red; */
 }
 
 h3 {
@@ -25,24 +27,35 @@ h3 {
 
 .navbar {
     background-color: #333;
-    padding: 20px;
+    /* padding-top: 20px; */
+    /* padding-bottom: 20px; */
+    margin: 0 auto;
 }
 
 .navbar ul {
     list-style-type: none;
     margin: 0;
+    padding:0;
+    display:flex
+    /* border: red solid 10px; */
 }
 
 .navbar ul li {
-    display: inline-block;
+    /* display: inline-block; */
+    margin: 0;
 
+}
 
+.navbar a{
+    display: block;
 }
 
 .navbar ul li a {
     text-decoration: none;
     padding: 20px;
     color: white;
+    /* display: block; */
+    /* border: red solid 10px; */
 }
 
 .navbar ul li a:visited {
@@ -83,6 +96,23 @@ h3 {
     background-color: #117e02;
 }
 
-#externalLink{
-    float: right;
+#externalLink {
+    /* float: right; */
+    /* justify-content: flex-end; */
+    margin-left: auto;
+}
+
+.container {
+    /* width: 100%; */
+    /* padding: 10px; */
+}
+
+.navbar {
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+}
+
+.content{
+    padding-left: 10px;
+    padding-right: 10px;
 }
