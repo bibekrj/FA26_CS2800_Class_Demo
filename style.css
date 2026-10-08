@@ -42,9 +42,6 @@ h3 {
 .navbar ul li a {
     text-decoration: none;
     padding: 20px;
-    /* background-color: #F6FFDC; */
-    /* border: 1px solid black; */
-    
     color: white;
 }
 
@@ -84,4 +81,8 @@ h3 {
 
 .active {
     background-color: #117e02;
+}
+
+#externalLink{
+    float: right;
 }
