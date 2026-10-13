@@ -116,3 +116,43 @@ h3 {
     padding-left: 10px;
     padding-right: 10px;
 }
+
+.rowflex{
+    display: flex;
+    /* width: 100%; */
+}
+
+.leftflex{
+    flex: 50%;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.rightflex{
+    flex:50%;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.adam{
+    flex: 30%;
+    padding: 20px;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.adam2{
+    flex:30%;
+    padding: 20px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.adam3{
+    flex:40%;
+    padding: 20px;
+    border: 1px solid black;
+}
+
