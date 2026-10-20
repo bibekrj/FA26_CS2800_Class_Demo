@@ -23,30 +23,30 @@
         </ul>
       </nav>
       <div class="content">
-        <form action="" method="get">
+        <form action="" method="get" name="contactform">
           <table>
             <tr>
               <td class="tdCenter">
-                <label for="first_name">First Name</label>
+                <label for="first_name" id="fnamelabel">First Name</label>
               </td>
-              <td><input type="text" name="first_name" id="" /></td>
+              <td><input type="text" name="first_name" id=""/></td>
             </tr>
 
             <tr>
               <td class="tdCenter"><label for="last_name">Last Name</label></td>
-              <td><input type="text" name="last_name" id="" /></td>
+              <td><input type="text" name="last_name" id="last_name" /></td>
             </tr>
             <tr>
               <td><label for="password">Password</label></td>
-              <td><input type="password" name="password" id="" /></td>
+              <td><input type="password" name="password" id="password" /></td>
             </tr>
             <tr>
               <td><label for="user_email">Email</label></td>
-              <td><input type="email" name="user_email" id="" /></td>
+              <td><input type="email" name="user_email" id="user_email" /></td>
             </tr>
             <tr>
               <td><label for="salary">Salary Expectations</label></td>
-              <td><input type="number" name="salary" id="" /></td>
+              <td><input type="number" name="salary" id="salary" value="100000" /></td>
             </tr>
             <tr>
               <td>
@@ -106,6 +106,7 @@
                   type="submit"
                   value="Send IT"
                   class="active"
+                  onclick="getFormData(); event.preventDefault();"
                 />
                 <input type="reset" value="Clear" />
                 <input type="button" value="Calculate" />

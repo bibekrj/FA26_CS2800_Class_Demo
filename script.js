@@ -47,3 +47,15 @@ function changeColor(){
     // document.getElementById("changeMe").innerHTML = "Test Complete";
 }
 // sayHello();
+
+
+// function to get form date and print to console
+// no parameters
+// uses document.forms and form.elements to correctly target the form elements
+function getFormData(){
+    let form = document.forms["contactform"];
+
+    let firstName = form.elements["first_name"].value;
+    console.log(firstName);
+  
+}
