@@ -106,14 +106,16 @@
                   type="submit"
                   value="Send IT"
                   class="active"
-                  onclick="getFormData(); event.preventDefault();"
+                  onclick="storeToLocal(); event.preventDefault();"
                 />
                 <input type="reset" value="Clear" />
-                <input type="button" value="Calculate" />
+                <input type="button" value="Calculate" onclick="writeToPage();" />
+                
               </td>
             </tr>
           </table>
         </form>
+        <div id="dataGoesBrr"></div>
       </div>
     </div>
     <script src="../script.js"></script>

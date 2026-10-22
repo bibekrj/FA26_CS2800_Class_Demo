@@ -56,6 +56,52 @@ function getFormData(){
     let form = document.forms["contactform"];
 
     let firstName = form.elements["first_name"].value;
-    console.log(firstName);
+    let lastName = form.elements["last_name"].value;
+    return {firstName, lastName};
   
+}
+
+
+function expandAB(a, b){
+    // (a+b)^2 = a^2 + 2*a*b + b^2
+
+    let finalExpansion = a^2 + 2*a*b + b^2; //a^2 + 2*a*b + b^2
+    return finalExpansion;
+
+}
+
+function calculateX(a,b,c){
+
+    let pos_x = (-b + ((b^2- 4*a*c)^(1/2)))/2*a;
+    let neg_x = (-b - ((b^2- 4*a*c)^(1/2)))/2*a;
+
+    return {x:pos_x, z:neg_x};
+
+
+
+}
+
+function storeToLocal(){
+    let {firstName, lastName} = getFormData();
+    let user = JSON.stringify({storedFirstName: firstName, storedLastName: lastName});
+
+    localStorage.setItem("userData", user);
+    // localStorage.setItem("userData", "test"  ) // {userData: {}}}
+}
+
+function getLocalData(){
+    let storedData = localStorage.getItem("userData");
+    // console.log(storedData);
+
+    let finalFname = JSON.parse(storedData);
+    // console.log(finalFname.storedFirstName);
+    // console.log(finalFname.storedLastName);
+    return finalFname;
+}
+
+function writeToPage(){
+    let dataComeshere = getLocalData();
+    let firstName = dataComeshere.storedFirstName;
+    let lastName = dataComeshere.storedLastName;
+    document.getElementById("dataGoesBrr").innerHTML = "<p> The first stored name is " + firstName + " The stored lastname is " + lastName + "</p>";
 }
