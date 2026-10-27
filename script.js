@@ -16,9 +16,11 @@ function getContacts(){
     return JSON.parse(data);
 }
 
+
+//store any array it gets in Local storage
 function saveContactsData(formContactData){
     const data = JSON.stringify(formContactData)
-    localStorage.setItem(STORAGE_KEY, data)
+    localStorage.setItem(STORAGE_KEY, data) // overwrites to the same key
 }
 
 function addContactData(first_name, last_name){
@@ -27,10 +29,14 @@ function addContactData(first_name, last_name){
         stored_last_name: last_name
     }
 
+
+    //gets data if any exists, otherwise return empty array 
     const allDataSoFar = getContacts()
-    
+
+    //data is added to the empty array or pushed onto the existing one
     allDataSoFar.push(contactDatas);
 
+    //data is saved to overwrite the existing array.
     saveContactsData(allDataSoFar);
 }
 
