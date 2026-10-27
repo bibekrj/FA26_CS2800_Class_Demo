@@ -23,13 +23,13 @@
         </ul>
       </nav>
       <div class="content">
-        <form action="" method="get" name="contactform">
+        <form action="" method="get" name="contactform" id="contactForm">
           <table>
             <tr>
               <td class="tdCenter">
                 <label for="first_name" id="fnamelabel">First Name</label>
               </td>
-              <td><input type="text" name="first_name" id=""/></td>
+              <td><input type="text" name="first_name" id="first_name"/></td>
             </tr>
 
             <tr>
@@ -101,20 +101,22 @@
             <tr>
               <td></td>
               <td>
-                <input
+                <!-- <input
                   id="submitBtn"
                   type="submit"
                   value="Send IT"
                   class="active"
-                  onclick="storeToLocal(); event.preventDefault();"
+                  onclick="storeToLocal(); event.preventDefault();" -->
                 />
-                <input type="reset" value="Clear" />
-                <input type="button" value="Calculate" onclick="writeToPage();" />
-                
+                <!-- <input type="reset" value="Clear" /> -->
+                <!-- <input type="button" value="Calculate" onclick="writeToPage();" /> -->
+                <button type="submit" id="submitBtn">Add Data</button>
               </td>
             </tr>
           </table>
         </form>
+        <button id="showDataBtn">Display ALL</button>
+        <button id="clearDataBtn">Clear Data</button>
         <div id="dataGoesBrr"></div>
       </div>
     </div>

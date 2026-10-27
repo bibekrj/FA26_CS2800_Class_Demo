@@ -1,107 +1,60 @@
-// // let user_input = prompt("Enter a number: ");
-// // console.log(typeof user_input);
+const STORAGE_KEY = 'contactFormData';
 
-// // if (user_input===20){
-// //     console.log("number matched")
-// // }
-
-// let alive = true;
-// let user_input;
-
-// while (alive === true) {
-//     user_input = prompt("Enter your password");
-//     if (user_input == "123456") {
-//         alive = false;
-//     }
-// }
-
-// console.log("While Loop counts")
-// let i = 0;
-
-// while (i < 10) {
-//     console.log(i)
-//     i += 1;
-// }
+const form = document.querySelector("#contactForm");
+const showBtn = document.querySelector("#showDataBtn")
+const clearBtn = document.querySelector("#clearDataBtn");
+const dataAll = document.querySelector("#dataGoesBrr")
 
 
-// console.log("For loop counts")
-// for (let j = 0; j < 10; j++) {
-//     console.log(j);
-// }
+//gets all data if any exists, otherwise returns empty array
+function getContacts(){
+    const data = localStorage.getItem(STORAGE_KEY);
+    if (data === null){
+        return [];
+    }
 
+    return JSON.parse(data);
+}
 
-function sayHello(){
-    // alert("Alert hello world")
-    console.log("Hello World");
+function saveContactsData(formContactData){
+    const data = JSON.stringify(formContactData)
+    localStorage.setItem(STORAGE_KEY, data)
+}
+
+function addContactData(first_name, last_name){
+    const contactDatas = {
+        stored_first_name: first_name,
+        stored_last_name: last_name
+    }
+
+    const allDataSoFar = getContacts()
+    
+    allDataSoFar.push(contactDatas);
+
+    saveContactsData(allDataSoFar);
 }
 
 
-function changeColor(){
-    let targetHtml = document.getElementById("changeMe");
-    targetHtml.style.color = "red";
-    targetHtml.innerHTML = "Test complete";
-    targetHtml.style.fontStyle = "italic";
+function handleFormSubmit(event){
+    event.preventDefault();
 
+    const firstName = document.querySelector("#first_name").value.trim();
+    const lastName = document.querySelector("#last_name").value.trim();
 
-    // document.getElementById("changeMe").style.color = "red";
-    // document.getElementById("changeMe").innerHTML = "Test Complete";
-}
-// sayHello();
+ 
+    if (firstName === "" || lastName === ""){
+        dataGoesBrr.textContent = "Enter Valid Data";
+        return;
+    }
 
+    addContactData(firstName, lastName);
 
-// function to get form date and print to console
-// no parameters
-// uses document.forms and form.elements to correctly target the form elements
-function getFormData(){
-    let form = document.forms["contactform"];
+    dataGoesBrr.textContent = "Contact Data Saved Successfully";
 
-    let firstName = form.elements["first_name"].value;
-    let lastName = form.elements["last_name"].value;
-    return {firstName, lastName};
-  
-}
-
-
-function expandAB(a, b){
-    // (a+b)^2 = a^2 + 2*a*b + b^2
-
-    let finalExpansion = a^2 + 2*a*b + b^2; //a^2 + 2*a*b + b^2
-    return finalExpansion;
+    form.reset()
 
 }
 
-function calculateX(a,b,c){
 
-    let pos_x = (-b + ((b^2- 4*a*c)^(1/2)))/2*a;
-    let neg_x = (-b - ((b^2- 4*a*c)^(1/2)))/2*a;
+form.addEventListener("submit", handleFormSubmit());
 
-    return {x:pos_x, z:neg_x};
-
-
-
-}
-
-function storeToLocal(){
-    let {firstName, lastName} = getFormData();
-    let user = JSON.stringify({storedFirstName: firstName, storedLastName: lastName});
-
-    localStorage.setItem("userData", user);
-    // localStorage.setItem("userData", "test"  ) // {userData: {}}}
-}
-
-function getLocalData(){
-    let storedData = localStorage.getItem("userData");
-    // console.log(storedData);
-
-    let finalFname = JSON.parse(storedData);
-    // console.log(finalFname.storedFirstName);
-    // console.log(finalFname.storedLastName);
-    return finalFname;
-}
-
-function writeToPage(){
-    let dataComeshere = getLocalData();
-    let firstName = dataComeshere.storedFirstName;
-    let lastName = dataComeshere.storedLastName;
-    document.getElementById("dataGoesBrr").innerHTML = "<p> The first stored name is " + firstName + " The stored lastname is " + lastName + "</p>";
-}
