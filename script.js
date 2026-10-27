@@ -62,5 +62,38 @@ function handleFormSubmit(event){
 }
 
 
-form.addEventListener("submit", handleFormSubmit());
+function displayContacts(){
+    const storedData = getContacts();
+    dataGoesBrr.replaceChildren();
 
+    if (storedData.length === 0){
+        dataGoesBrr.textContent = "No Records Found";
+        return;
+    }
+
+
+    storedData.forEach(function(singleStoreData, index){
+        const paragraph = document.createElement("p");
+        paragraph.textContent= `${index+1}. ${singleStoreData.stored_first_name} ${singleStoreData.stored_last_name}`;
+        dataGoesBrr.appendChild(paragraph)
+    });
+}
+
+
+function clearAllData(){
+    localStorage.removeItem(STORAGE_KEY);
+}
+
+function handleClear(){
+    clearAllData();
+    dataGoesBrr.textContent = "All Records Cleared";
+}
+
+
+
+
+
+form.addEventListener("submit", handleFormSubmit);
+showBtn.addEventListener("click", displayContacts);
+
+clearBtn.addEventListener("click", handleClear);
