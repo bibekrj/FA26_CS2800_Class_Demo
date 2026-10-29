@@ -65,17 +65,27 @@ function handleFormSubmit(event){
 function displayContacts(){
     const storedData = getContacts();
     dataGoesBrr.replaceChildren();
+    
 
-    if (storedData.length === 0){
-        dataGoesBrr.textContent = "No Records Found";
-        return;
-    }
+    // if (storedData.length === 0){
+    //     dataGoesBrr.textContent = "No Records Found";
+    //     return;
+    // }
 
 
     storedData.forEach(function(singleStoreData, index){
         const paragraph = document.createElement("p");
-        paragraph.textContent= `${index+1}. ${singleStoreData.stored_first_name} ${singleStoreData.stored_last_name}`;
-        dataGoesBrr.appendChild(paragraph)
+        paragraph.textContent= `${index+1}. ${singleStoreData.stored_first_name} ${singleStoreData.stored_last_name} `;
+       
+        const editButton = document.createElement("button");
+        editButton.textContent = "Edit";
+        editButton.addEventListener("click", function(){
+            editContact(index);
+        })
+
+        paragraph.appendChild(editButton);
+
+        dataGoesBrr.appendChild(paragraph);
     });
 }
 
@@ -89,6 +99,45 @@ function handleClear(){
     dataGoesBrr.textContent = "All Records Cleared";
 }
 
+
+function updateContact(index, newFirstName, newLastName){
+    const contacts = getContacts();
+   
+    if (index < 0 || index >= contacts.length){
+        return;
+    }
+
+    contacts[index].stored_first_name = newFirstName;
+    contacts[index].stored_last_name = newLastName;
+
+    saveContactsData(contacts);
+
+}
+
+function editContact(index){
+    const contacts = getContacts();
+    const contact = contacts[index];
+
+    if (!contact){
+        return;
+    }
+
+    const editedFirstName = prompt("Enter a new  first name:", contact.stored_first_name);
+    
+    if (editedFirstName === null || editedFirstName.trim() === ""){
+        return;
+    }
+
+    const editedLastName = prompt("Enter a new last_name:", contact.stored_last_name);
+
+    if(editedLastName === null || editedLastName.trim() === ""){
+        return;
+    }
+
+    updateContact(index, editedFirstName, editedLastName );
+
+    displayContacts();
+}
 
 
 
