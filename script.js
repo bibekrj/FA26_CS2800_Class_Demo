@@ -164,6 +164,6 @@ showBtn.addEventListener("click", function(){
 clearBtn.addEventListener("click", handleClear);
 
 document.querySelector("#search").addEventListener("input", searchContacts);
-// document.addEventListener("DOMContentLoaded", function() {
-//     document.querySelector("#search").addEventListener("input", searchContacts);
-// });
+document.addEventListener("DOMContentLoaded", function() {
+    displayContacts();
+});
