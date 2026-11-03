@@ -62,15 +62,17 @@ function handleFormSubmit(event){
 }
 
 
-function displayContacts(){
-    const storedData = getContacts();
-    dataGoesBrr.replaceChildren();
-    
+function displayContacts(storedData = getContacts()){
+    // const storedData = getContacts();
+   
+    // console.log("Stored data:",storedData);
+    // console.log("IsArray:", Array.isArray(storedData));
+     dataGoesBrr.replaceChildren();
 
-    // if (storedData.length === 0){
-    //     dataGoesBrr.textContent = "No Records Found";
-    //     return;
-    // }
+    if (storedData.length === 0){
+        dataGoesBrr.textContent = "No Records Found";
+        return;
+    }
 
 
     storedData.forEach(function(singleStoreData, index){
@@ -139,10 +141,29 @@ function editContact(index){
     displayContacts();
 }
 
+ function searchContacts(){
+    const query = document.querySelector("#search").value.trim().toLowerCase();
+
+    const contacts = getContacts();
+
+    const filteredContacts = contacts.filter(function(contact){
+        return contact.stored_first_name.toLowerCase().includes(query) || contact.stored_last_name.toLowerCase().includes(query);
+    });
+
+    displayContacts(filteredContacts);
+ }
 
 
 
 form.addEventListener("submit", handleFormSubmit);
-showBtn.addEventListener("click", displayContacts);
+
+showBtn.addEventListener("click", function(){
+    displayContacts();
+});
 
 clearBtn.addEventListener("click", handleClear);
+
+document.querySelector("#search").addEventListener("input", searchContacts);
+// document.addEventListener("DOMContentLoaded", function() {
+//     document.querySelector("#search").addEventListener("input", searchContacts);
+// });
