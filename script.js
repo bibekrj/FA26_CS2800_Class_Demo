@@ -143,13 +143,14 @@ function editContact(index){
 
  function searchContacts(){
     const query = document.querySelector("#search").value.trim().toLowerCase();
+// BIBEK === bibek
 
     const contacts = getContacts();
 
     const filteredContacts = contacts.filter(function(contact){
         return contact.stored_first_name.toLowerCase().includes(query) || contact.stored_last_name.toLowerCase().includes(query);
     });
-
+    console.log(filteredContacts)
     displayContacts(filteredContacts);
  }
 
@@ -164,6 +165,7 @@ showBtn.addEventListener("click", function(){
 clearBtn.addEventListener("click", handleClear);
 
 document.querySelector("#search").addEventListener("input", searchContacts);
+
 document.addEventListener("DOMContentLoaded", function() {
     displayContacts();
 });

@@ -157,3 +157,20 @@ h3 {
     border: 1px solid black;
 }
 
+
+#dataGoesBrr {
+    background-color: #117e02;
+    padding: 10px;
+
+}
+
+#dataGoesBrr p {
+   color: #000; 
+   padding-left: 20px;
+   /* padding-right: 0px; */
+}
+
+#dataGoesBrr p button{
+    background-color: aliceblue;
+    margin-left: 40px;
+}
