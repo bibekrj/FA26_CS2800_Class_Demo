@@ -1,1 +1,176 @@
-/* #this is a sample file */
+/* Applies color and font family across all pages */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(27, 28, 27);
+    background-color: #f4f6f8;
+    margin: 0;
+    /* padding 0 */
+    /* width: 100%; */
+}
+
+p {
+    font-size: 20px;
+}
+
+p {
+
+    color: blue;
+}
+
+h1 {
+    font-size: 30px;
+    /* color: red; */
+}
+
+h3 {
+    font-size: 15px;
+}
+
+.navbar {
+    background-color: #333;
+    /* padding-top: 20px; */
+    /* padding-bottom: 20px; */
+    margin: 0 auto;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+    display:flex
+    /* border: red solid 10px; */
+}
+
+.navbar ul li {
+    /* display: inline-block; */
+    margin: 0;
+
+}
+
+.navbar a{
+    display: block;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    padding: 20px;
+    color: white;
+    /* display: block; */
+    /* border: red solid 10px; */
+}
+
+.navbar ul li a:visited {
+    /* color: ; */
+}
+
+.navbar ul li a:hover {
+    background-color: #000;
+}
+
+
+#formButton {
+    background-color: rgb(249, 178, 215);
+}
+
+#submitBtn {
+    /* background-color: rgb(249, 178, 215); */
+    padding: 20px;
+}
+
+.demoTable td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.demoTable {
+    border-collapse: collapse;
+}
+
+
+
+.tdCenter {
+    text-align: center;
+    background-color: white;
+}
+
+.active {
+    background-color: #117e02;
+}
+
+#externalLink {
+    /* float: right; */
+    /* justify-content: flex-end; */
+    margin-left: auto;
+}
+
+.container {
+    /* width: 100%; */
+    /* padding: 10px; */
+}
+
+.navbar {
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+}
+
+.content{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.rowflex{
+    display: flex;
+    /* width: 100%; */
+}
+
+.leftflex{
+    flex: 50%;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.rightflex{
+    flex:50%;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.adam{
+    flex: 30%;
+    padding: 20px;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.adam2{
+    flex:30%;
+    padding: 20px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.adam3{
+    flex:40%;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+
+#dataGoesBrr {
+    background-color: #117e02;
+    padding: 10px;
+
+}
+
+#dataGoesBrr p {
+   color: #000; 
+   padding-left: 20px;
+   /* padding-right: 0px; */
+}
+
+#dataGoesBrr p button{
+    background-color: aliceblue;
+    margin-left: 40px;
+}
