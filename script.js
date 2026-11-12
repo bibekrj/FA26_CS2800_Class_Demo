@@ -169,5 +169,4 @@ document.querySelector("#search").addEventListener("input", searchContacts);
 document.addEventListener("DOMContentLoaded", function() {
     displayContacts();
 });
-alert("Bibek was also here");
-console.log("Bibek was here");
+
