@@ -8,6 +8,10 @@ body {
     /* width: 100%; */
 }
 
+@media (width: 680px){
+   
+}
+
 p {
     font-size: 20px;
 }
