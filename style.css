@@ -9,7 +9,9 @@ body {
 }
 
 @media (width: 680px){
-   
+    body{
+        background-color: red;
+    }
 }
 
 p {
