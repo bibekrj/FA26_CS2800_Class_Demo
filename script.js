@@ -169,3 +169,4 @@ document.querySelector("#search").addEventListener("input", searchContacts);
 document.addEventListener("DOMContentLoaded", function() {
     displayContacts();
 });
+
