@@ -66,4 +66,4 @@ jobs:
             --exclude='*.pem' \
             -e "ssh -i ~/.ssh/deploy.pem -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes" \
             ./ \
-            "$EC2_USER@$EC2_HOST:/var/www/cs2800/"
+            "$EC2_USER@$EC2_HOST:/var/www/html/"
