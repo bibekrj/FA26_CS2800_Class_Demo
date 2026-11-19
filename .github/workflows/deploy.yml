@@ -16,24 +16,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      
-      - name: Test SSH connection
-        env:
-          EC2_HOST: ${{ secrets.EC2_HOST }}
-          EC2_USER: ${{ secrets.EC2_USER }}
-        run: |
-          ssh -v \
-            -i ~/.ssh/deploy.pem \
-            -o BatchMode=yes \
-            -o StrictHostKeyChecking=yes \
-            -o ConnectTimeout=10 \
-            "$EC2_USER@$EC2_HOST" \
-            "echo 'SSH connection successful'"
-
-
+      # Step 1: Download repository
       - name: Checkout repository
         uses: actions/checkout@v6
 
+      # Step 2: Configure SSH
       - name: Configure SSH
         env:
           SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
@@ -41,19 +28,42 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
-          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
+
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy.pem
+          chmod 600 ~/.ssh/deploy.pem
+
           printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
 
+          test -s ~/.ssh/known_hosts || exit 1
+          test -s ~/.ssh/deploy.pem || exit 1
+
+      # Step 3: Test SSH connection
+      - name: Test SSH connection
+        env:
+          EC2_HOST: ${{ secrets.EC2_HOST }}
+          EC2_USER: ${{ secrets.EC2_USER }}
+        run: |
+          ssh \
+            -i ~/.ssh/deploy.pem \
+            -o IdentitiesOnly=yes \
+            -o BatchMode=yes \
+            -o StrictHostKeyChecking=yes \
+            -o ConnectTimeout=10 \
+            "$EC2_USER@$EC2_HOST" \
+            "echo 'SSH connection successful'"
+
+      # Step 4: Deploy website
       - name: Deploy website files
         env:
           EC2_HOST: ${{ secrets.EC2_HOST }}
+          EC2_USER: ${{ secrets.EC2_USER }}
         run: |
           rsync -avz \
-          --exclude ='.git/'\
-          --exclude='.github/'\
-          --exclude='Wireframes/'\
-            -e "ssh -o StrictHostKeyChecking=yes" \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='Wireframes/' \
+            --exclude='*.pem' \
+            -e "ssh -i ~/.ssh/deploy.pem -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes" \
             ./ \
-            "$EC2@_USER@$EC2_HOST":/var/www/cs2800/
+            "$EC2_USER@$EC2_HOST:/var/www/cs2800/"
